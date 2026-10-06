@@ -4,108 +4,498 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy - GoalSats</title>
-    <link rel="icon" type="image/webp" href="https://firebasestorage.googleapis.com/v0/b/kicksats-b481a.firebasestorage.app/o/icon.webp?alt=media&token=6c7678cd-220a-4ecb-a904-c39de449be99">
     <style>
-        body {
-            background-color: #0c100d;
-            color: #d1d5db;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            line-height: 1.6;
+        :root {
+            --bg-body: #0d120e;
+            --bg-card: #131a15;
+            --primary-color: #080c09;
+            --accent-green: #00ff66;
+            --accent-hover: #00cc52;
+            --text-main: #d1d8d3;
+            --text-heading: #00ff66;
+            --border-color: #1f2b22;
+            --subtle-bg: #162019;
+            --link-color: #00ff66;
+        }
+
+        * {
+            box-sizing: border-box;
             margin: 0;
-            padding: 24px 16px;
+            padding: 0;
         }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 0;
+            margin: 0;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: #ffffff;
+            padding: 3rem 1.5rem 2.5rem;
+            text-align: center;
+            border-bottom: 3px solid var(--accent-green);
+        }
+
+        header h1 {
+            color: var(--accent-green);
+            font-size: 2.25rem;
+            font-weight: 800;
+            letter-spacing: -0.025em;
+            margin-bottom: 0.5rem;
+        }
+
+        header .last-updated {
+            display: inline-block;
+            background-color: rgba(0, 255, 102, 0.1);
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            color: var(--accent-green);
+            border: 1px solid rgba(0, 255, 102, 0.2);
+            margin-top: 0.5rem;
+        }
+
         .container {
-            max-width: 800px;
+            max-width: 860px;
             margin: 0 auto;
-            background: #121814;
-            border: 1px solid #1e2922;
+            padding: 2.5rem 1.5rem 4rem;
+        }
+
+        .content-card {
+            background-color: var(--bg-card);
             border-radius: 12px;
-            padding: 24px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+            border: 1px solid var(--border-color);
+            padding: 2.5rem;
         }
-        h1, h2, h3 {
-            color: #00ff66;
+
+        .intro {
+            font-size: 1.05rem;
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border-color);
         }
-        h1 {
-            font-size: 26px;
-            border-bottom: 1px solid #1e2922;
-            padding-bottom: 12px;
+
+        .intro p {
+            margin-bottom: 1rem;
         }
-        h2 {
-            font-size: 18px;
-            margin-top: 24px;
+
+        .intro p:last-child {
+            margin-bottom: 0;
         }
-        ul {
-            padding-left: 20px;
+
+        .toc {
+            background-color: var(--subtle-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.25rem 1.5rem;
+            margin-bottom: 2.5rem;
         }
-        li {
-            margin-bottom: 8px;
+
+        .toc h2 {
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+            color: var(--accent-green);
+            font-weight: 700;
         }
-        a {
-            color: #00ff66;
+
+        .toc ul {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 0.5rem 1rem;
+        }
+
+        .toc li a {
+            color: var(--text-main);
             text-decoration: none;
+            font-size: 0.925rem;
+            transition: color 0.2s ease;
         }
-        a:hover {
+
+        .toc li a:hover {
+            color: var(--accent-green);
             text-decoration: underline;
         }
-        .footer {
-            margin-top: 32px;
-            padding-top: 16px;
-            border-top: 1px solid #1e2922;
-            font-size: 14px;
-            color: #888;
+
+        section {
+            margin-bottom: 2.25rem;
+        }
+
+        section:last-of-type {
+            margin-bottom: 1.5rem;
+        }
+
+        h2.section-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--accent-green);
+            margin-bottom: 1rem;
+            padding-bottom: 0.35rem;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        h3.subsection-title {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin: 1.25rem 0 0.5rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        ul {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+        }
+
+        li {
+            margin-bottom: 0.4rem;
+        }
+
+        strong {
+            color: #ffffff;
+        }
+
+        a {
+            color: var(--link-color);
+            text-decoration: underline;
+        }
+
+        a:hover {
+            color: var(--accent-hover);
+        }
+
+        .contact-box {
+            background-color: var(--subtle-bg);
+            border: 1px solid var(--border-color);
+            border-left: 4px solid var(--accent-green);
+            border-radius: 8px;
+            padding: 1.25rem;
+            margin: 1rem 0;
+        }
+
+        .contact-box a {
+            color: var(--accent-green);
+            font-weight: 600;
+        }
+
+        .disclaimer-box {
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border-color);
+            font-size: 0.875rem;
+            color: #94a3b8;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem 1.5rem;
+            font-size: 0.875rem;
+            color: #94a3b8;
+            border-top: 1px solid var(--border-color);
+            background-color: var(--primary-color);
+        }
+
+        @media (max-width: 640px) {
+            header {
+                padding: 2rem 1rem 1.75rem;
+            }
+            header h1 {
+                font-size: 1.75rem;
+            }
+            .content-card {
+                padding: 1.5rem;
+            }
+            .container {
+                padding: 1.25rem 0.75rem 2.5rem;
+            }
         }
     </style>
 </head>
 <body>
+
+    <header>
+        <h1>GoalSats Privacy Policy</h1>
+        <div class="last-updated">Last Updated: October 6, 2026</div>
+    </header>
+
     <div class="container">
-        <h1>Privacy Policy for GoalSats</h1>
-        <p><strong>Effective Date:</strong> July 2026</p>
-        <p><strong>GoalSats</strong> ("we", "our", or "us") operates the GoalSats application and web services. This page informs you of our policies regarding the collection, use, and disclosure of personal data when you use our app and the choices you have associated with that data.</p>
+        <div class="content-card">
+            
+            <div class="intro">
+                <p><strong>GoalSats</strong> ("GoalSats", "we", "us", or "our") respects your privacy and is committed to protecting the information associated with your GoalSats account.</p>
+                <p>This Privacy Policy explains what information GoalSats collects, how we use it, how it is stored and protected, when it may be shared with service providers, and how you can request deletion of your account and associated data.</p>
+                <p>By using GoalSats, you acknowledge the practices described in this Privacy Policy.</p>
+            </div>
 
-        <h2>1. Information We Collect</h2>
-        <ul>
-            <li><strong>Account Registration Data:</strong> When you create an account, we collect your email address, username, password PIN, and selected region/nationality ID.</li>
-            <li><strong>Third-Party Authentication Data:</strong> If you sign up using Google or Facebook Login, we receive basic public profile information (such as your name and email address) authorized by your authentication provider.</li>
-            <li><strong>Gameplay & Simulation Data:</strong> We record your match predictions, win/loss history, level progression, division status, and virtual SATP balances on our secure backend.</li>
-            <li><strong>Device & Technical Identifiers:</strong> Device model, operating system version, and unique advertising identifiers (such as the Android Advertising ID) for ad delivery and security.</li>
-        </ul>
+            <nav class="toc">
+                <h2>Table of Contents</h2>
+                <ul>
+                    <li><a href="#section-1">1. Information We Collect</a></li>
+                    <li><a href="#section-2">2. Advertising</a></li>
+                    <li><a href="#section-3">3. How We Use Information</a></li>
+                    <li><a href="#section-4">4. Contest Information</a></li>
+                    <li><a href="#section-5">5. Service Providers and Data Sharing</a></li>
+                    <li><a href="#section-6">6. Data Security</a></li>
+                    <li><a href="#section-7">7. Data Retention</a></li>
+                    <li><a href="#section-8">8. Account Deletion</a></li>
+                    <li><a href="#section-9">9. Children's Privacy</a></li>
+                    <li><a href="#section-10">10. Your Choices and Rights</a></li>
+                    <li><a href="#section-11">11. Third-Party Services</a></li>
+                    <li><a href="#section-12">12. Changes to This Policy</a></li>
+                    <li><a href="#section-13">13. Contact Us</a></li>
+                </ul>
+            </nav>
 
-        <h2>2. In-Game Currency & Virtual Assets (SATP Disclaimer)</h2>
-        <ul>
-            <li><strong>Virtual Points Only:</strong> All <strong>SATP (SAT Points)</strong>, badges, and division trophies displayed or earned within GoalSats are non-monetary, virtual in-game points used strictly for gameplay progression, arena entries, and leaderboards.</li>
-            <li><strong>No Real Monetary Value:</strong> SATP has <strong>no real-world cash or cryptocurrency value</strong>. SATP cannot be withdrawn, transferred off-platform, sold, exchanged, or redeemed for fiat currency or real digital assets under any circumstances.</li>
-        </ul>
+            <section id="section-1">
+                <h2 class="section-title">1. Information We Collect</h2>
+                <p>Depending on how you use GoalSats, we may collect and process the following information.</p>
 
-        <h2>3. Server-Authoritative Data Processing</h2>
-        <p>GoalSats operates using a server-authoritative architecture. Game logic, prediction records, tournament standings, and in-game SATP balances are transmitted to and processed securely on our backend servers to maintain game integrity, secure user balances, and enforce anti-cheat rules.</p>
+                <h3 class="subsection-title">Account and authentication information</h3>
+                <p>When you create or access a GoalSats account, we may process:</p>
+                <ul>
+                    <li>Email address</li>
+                    <li>Firebase account/user ID</li>
+                    <li>Username</li>
+                    <li>Authentication information required to maintain your account</li>
+                    <li>Information provided through supported sign-in providers, where applicable</li>
+                </ul>
+                <p>GoalSats supports email/password authentication and Google sign-in. The application also contains Facebook authentication integration where that feature is enabled.</p>
+                <p>Authentication services may also process technical information such as IP addresses and user-agent information for authentication security, abuse prevention, and account management.</p>
 
-        <h2>4. Advertising & Third-Party Services</h2>
-        <p>We utilize trusted third-party service providers to power authentication and monetization:</p>
-        <ul>
-            <li><strong>Google AdMob:</strong> Delivers banner, interstitial, and voluntary rewarded video ads. AdMob uses unique device identifiers to serve ads, prevent click fraud, and analyze performance.</li>
-            <li><strong>Google & Facebook Authentication:</strong> Facilitates fast, secure single sign-on without storing raw social passwords on our servers.</li>
-        </ul>
+                <h3 class="subsection-title">Profile information</h3>
+                <p>You may provide information such as:</p>
+                <ul>
+                    <li>Username</li>
+                    <li>Nationality or country selection</li>
+                    <li>Profile picture/avatar</li>
+                    <li>Profile and gameplay preferences</li>
+                </ul>
+                <p>A profile picture may be stored as part of your GoalSats profile and may be displayed to other users in areas such as leaderboards, matches, or other multiplayer features.</p>
 
-        <h2>5. Intellectual Property & Asset Attributions</h2>
-        <ul>
-            <li><strong>Flag Graphics:</strong> Country flag graphics utilized in the World Cup Division arena are provided by <strong>Twemoji</strong> (Twitter, Inc. and contributors) under the Creative Commons Attribution 4.0 International license (CC-BY 4.0).</li>
-            <li><strong>Game Branding:</strong> GoalSats, SATP, and custom arena logos are the intellectual property of GoalSats.</li>
-        </ul>
+                <h3 class="subsection-title">Gameplay and account activity</h3>
+                <p>GoalSats stores information necessary to operate the game and maintain your account, which may include:</p>
+                <ul>
+                    <li>Experience points and player level</li>
+                    <li>Match statistics</li>
+                    <li>Wins, draws, losses, and streak information</li>
+                    <li>Leaderboard information</li>
+                    <li>In-game SATP balances and related virtual-item information</li>
+                    <li>Achievements, titles, badges, borders, boots, and other unlocked items</li>
+                    <li>Tournament and match information</li>
+                    <li>Rivalry and multiplayer information</li>
+                    <li>Gameplay history</li>
+                    <li>Referral information</li>
+                    <li>In-game reward and transaction records</li>
+                    <li>Contest participation, predictions, scores, rankings, and related contest statistics where applicable</li>
+                </ul>
+                <p>SATP are virtual in-game points and do not represent cash, cryptocurrency, or a monetary deposit.</p>
 
-        <h2>6. Data Retention & Account Deletion Requests</h2>
-        <p>You have the right to request the deletion of your account and associated personal game data at any time. To request complete account data removal, please contact developer support via email at <a href="mailto:support@goalsats.com">support@goalsats.com</a> or through our store listing contact link. Upon verification, your account and server-stored records will be permanently deleted.</p>
+                <h3 class="subsection-title">Push-notification information</h3>
+                <p>If notifications are enabled, GoalSats may store a Firebase Cloud Messaging device token associated with your account so that we can deliver relevant app notifications.</p>
+                <p>You can control notification permissions through your Android device settings.</p>
 
-        <h2>7. Children's Privacy</h2>
-        <p>GoalSats does not knowingly collect personally identifiable information from children under 13 years of age. If we discover that a child under 13 has provided us with personal information, we immediately delete it from our servers.</p>
+                <h3 class="subsection-title">Device and technical information</h3>
+                <p>GoalSats and the services used to operate the application may process technical information such as:</p>
+                <ul>
+                    <li>Device type and model</li>
+                    <li>Android operating system information</li>
+                    <li>Application and SDK information</li>
+                    <li>IP address</li>
+                    <li>User-agent information</li>
+                    <li>Firebase application identifiers</li>
+                    <li>Authentication and security information</li>
+                    <li>Information necessary to detect abuse, protect accounts, and maintain service reliability</li>
+                </ul>
+                <p>GoalSats does not request Android location permissions in the current application.</p>
+            </section>
 
-        <h2>8. Changes to This Privacy Policy</h2>
-        <p>We may update our Privacy Policy from time to time. You are advised to review this page periodically for any changes.</p>
+            <section id="section-2">
+                <h2 class="section-title">2. Advertising</h2>
+                <p>GoalSats uses Google Mobile Ads to display advertising, including rewarded advertisements and banner advertisements.</p>
+                <p>Advertising providers may process information such as device identifiers, IP address, advertising information, ad interaction information, and technical or diagnostic information as necessary to provide, measure, and protect advertising services.</p>
+                <p>GoalSats does not sell your personal information to advertisers.</p>
+                <p>Advertising providers operate according to their own privacy policies and applicable privacy controls.</p>
+            </section>
 
-        <div class="footer">
-            <p><strong>Contact Us:</strong><br>
-            If you have any questions regarding this Privacy Policy, contact us at: <a href="mailto:support@goalsats.com">support@goalsats.com</a></p>
-            <p>© 2026 GoalSats. All rights reserved.</p>
+            <section id="section-3">
+                <h2 class="section-title">3. How We Use Information</h2>
+                <p>We use information for purposes including:</p>
+                <ul>
+                    <li>Creating and managing GoalSats accounts</li>
+                    <li>Authenticating users</li>
+                    <li>Providing game functionality</li>
+                    <li>Maintaining player profiles</li>
+                    <li>Operating matchmaking and multiplayer features</li>
+                    <li>Maintaining leaderboards and rankings</li>
+                    <li>Recording gameplay statistics and history</li>
+                    <li>Maintaining virtual in-game balances and rewards</li>
+                    <li>Processing in-game transactions and rewards</li>
+                    <li>Operating contests and simulations</li>
+                    <li>Verifying contest eligibility</li>
+                    <li>Recording contest predictions and scores</li>
+                    <li>Delivering push notifications</li>
+                    <li>Preventing cheating, fraud, abuse, and unauthorized access</li>
+                    <li>Protecting the security and integrity of the service</li>
+                    <li>Troubleshooting and maintaining the application</li>
+                    <li>Improving reliability and performance</li>
+                    <li>Serving and measuring advertisements</li>
+                    <li>Responding to support requests</li>
+                    <li>Complying with applicable legal obligations</li>
+                </ul>
+            </section>
+
+            <section id="section-4">
+                <h2 class="section-title">4. Contest Information</h2>
+                <p>GoalSats may operate free-to-enter Football Simulation Contests.</p>
+                <p>Contest-related information may include:</p>
+                <ul>
+                    <li>Contest participation</li>
+                    <li>Simulated-match predictions</li>
+                    <li>Prediction results and scores</li>
+                    <li>Contest rankings</li>
+                    <li>Eligibility information</li>
+                    <li>Contest statistics</li>
+                    <li>Prize-related information where a user becomes an eligible winner</li>
+                </ul>
+                <p>All GoalSats contest matches are simulated within GoalSats and are not real-world football fixtures.</p>
+                <p>Contest participation is subject to the applicable contest rules displayed in the application.</p>
+                <p>Where a physical prize requires delivery information from an eligible winner, GoalSats may request the information reasonably necessary to arrange delivery of that prize. Such information will be used for the applicable prize-fulfillment purpose.</p>
+            </section>
+
+            <section id="section-5">
+                <h2 class="section-title">5. Service Providers and Data Sharing</h2>
+                <p>GoalSats uses third-party service providers to operate and maintain the application.</p>
+                <p>These may include:</p>
+                
+                <h3 class="subsection-title">Firebase and Google services</h3>
+                <p>GoalSats uses Firebase services provided by Google, including services such as:</p>
+                <ul>
+                    <li>Firebase Authentication</li>
+                    <li>Cloud Firestore</li>
+                    <li>Firebase Cloud Messaging</li>
+                    <li>Firebase Cloud Functions</li>
+                    <li>Firebase App Check</li>
+                    <li>Firebase Realtime Database</li>
+                    <li>Google Mobile Ads</li>
+                    <li>Google Sign-In</li>
+                </ul>
+                <p>These services may process information on our behalf or as necessary to provide their respective services.</p>
+                <p>Firebase states that data handled by applicable Firebase services is encrypted in transit and that Firebase provides mechanisms for developers to delete end-user data.</p>
+
+                <h3 class="subsection-title">Social sign-in providers</h3>
+                <p>If you choose to use a supported social sign-in method, the applicable provider may process information according to its own privacy policy.</p>
+                <p>For Google sign-in, Google may provide GoalSats with information required to authenticate your account, such as your email address and account identifier.</p>
+                <p>If Facebook sign-in is enabled and used, Facebook may process information associated with that authentication request according to Meta's applicable privacy practices.</p>
+
+                <p><strong>We do not sell your personal information.</strong></p>
+                <p>We may disclose information when reasonably necessary to:</p>
+                <ul>
+                    <li>Provide the service</li>
+                    <li>Protect users and the platform</li>
+                    <li>Prevent fraud, abuse, or cheating</li>
+                    <li>Fulfill physical prizes</li>
+                    <li>Comply with legal obligations</li>
+                    <li>Respond to valid legal requests</li>
+                    <li>Protect the rights, property, or safety of GoalSats, our users, or others</li>
+                </ul>
+            </section>
+
+            <section id="section-6">
+                <h2 class="section-title">6. Data Security</h2>
+                <p>We use reasonable technical and organizational measures to protect information associated with GoalSats accounts.</p>
+                <p>GoalSats uses Firebase authentication, authenticated backend services, Firestore security rules, server-side authorization, and other security controls to protect account and game data.</p>
+                <p>Data transmitted between the application and supported services is protected using encrypted network connections such as HTTPS/TLS where supported by those services.</p>
+                <p>No method of electronic storage or transmission can be guaranteed to be completely secure. Therefore, while we take reasonable measures to protect information, we cannot guarantee absolute security.</p>
+            </section>
+
+            <section id="section-7">
+                <h2 class="section-title">7. Data Retention</h2>
+                <p>We retain information for as long as reasonably necessary to provide GoalSats, maintain accounts, operate gameplay and contest features, maintain security, prevent fraud and abuse, resolve disputes, maintain legitimate game records, and comply with applicable legal obligations.</p>
+                <p>When information is no longer required for these purposes, it should be deleted or otherwise handled in accordance with applicable data-protection requirements.</p>
+                <p>Some records may need to be retained for a limited period where necessary for security, fraud prevention, dispute resolution, or legal compliance. Where such retention is required, we will limit the retained information to what is reasonably necessary.</p>
+            </section>
+
+            <section id="section-8">
+                <h2 class="section-title">8. Account Deletion</h2>
+                <p>GoalSats provides an in-app Delete Account option in Profile Settings.</p>
+                <p>Users may request deletion of their GoalSats account and associated personal data through the in-app account deletion feature.</p>
+                <p>Users may also contact GoalSats at:</p>
+                <div class="contact-box">
+                    <strong>Email Support:</strong> <a href="mailto:support@goalsats.com">support@goalsats.com</a>
+                </div>
+                <p>When an account deletion request is successfully processed, GoalSats will delete the account and associated personal information from the applicable GoalSats systems, subject to any information that we are legally or legitimately required to retain for purposes such as security, fraud prevention, dispute resolution, or legal compliance.</p>
+                <p>Deleting an account is different from simply logging out or disabling an account.</p>
+                <p>Deletion requests should clearly identify the GoalSats account concerned. We may take reasonable steps to verify the request before processing it in order to prevent unauthorized deletion.</p>
+                <p>Google Play requires apps that provide account creation to offer both an in-app deletion path and an external deletion resource.</p>
+            </section>
+
+            <section id="section-9">
+                <h2 class="section-title">9. Children's Privacy</h2>
+                <p>GoalSats does not knowingly collect personally identifiable information from children under 13.</p>
+                <p>If we become aware that a child under 13 has provided personal information to us without appropriate authorization, we will take reasonable steps to delete that information from our systems.</p>
+                <p>The GoalSats Football Simulation Contest is restricted to users who meet the eligibility requirements stated in the applicable contest rules, including the stated 18+ requirement where applicable.</p>
+            </section>
+
+            <section id="section-10">
+                <h2 class="section-title">10. Your Choices and Rights</h2>
+                <p>Depending on applicable law, you may have rights relating to your personal information, including rights to:</p>
+                <ul>
+                    <li>Access information associated with your account</li>
+                    <li>Correct inaccurate profile information</li>
+                    <li>Request deletion of your account and associated information</li>
+                    <li>Withdraw certain permissions through your device settings</li>
+                    <li>Control notification permissions</li>
+                    <li>Contact us with questions or privacy requests</li>
+                </ul>
+                <p>Some information may be necessary for the operation and security of the service, and certain legitimate retention exceptions may apply.</p>
+                <p>To make a privacy or account-deletion request, contact:</p>
+                <div class="contact-box">
+                    <strong>Email:</strong> <a href="mailto:support@goalsats.com">support@goalsats.com</a>
+                </div>
+            </section>
+
+            <section id="section-11">
+                <h2 class="section-title">11. Third-Party Services and Privacy Policies</h2>
+                <p>GoalSats relies on third-party services to provide authentication, cloud storage, notifications, advertising, security, and other functionality.</p>
+                <p>Those providers may process information according to their own privacy policies and terms.</p>
+                <p>Users should review the applicable privacy information provided by Google, Firebase, Google Mobile Ads, Google Sign-In, and any other third-party authentication or service provider they choose to use.</p>
+            </section>
+
+            <section id="section-12">
+                <h2 class="section-title">12. Changes to This Privacy Policy</h2>
+                <p>We may update this Privacy Policy from time to time to reflect changes to GoalSats, our services, applicable laws, or our data practices.</p>
+                <p>When we make material changes, we may provide appropriate notice within the application or through other reasonable means.</p>
+                <p>The "Last Updated" date at the beginning of this Privacy Policy indicates when the policy was most recently revised.</p>
+            </section>
+
+            <section id="section-13">
+                <h2 class="section-title">13. Contact Us</h2>
+                <p>If you have questions about this Privacy Policy, your personal information, or account deletion, please contact:</p>
+                <div class="contact-box">
+                    <p><strong>GoalSats Support</strong></p>
+                    <p>Email: <a href="mailto:support@goalsats.com">support@goalsats.com</a></p>
+                </div>
+            </section>
+
+            <div class="disclaimer-box">
+                <p>GoalSats is an independent platform. It is not affiliated with, sponsored by, endorsed by, or officially associated with any football club, league, federation, player, or sports brand referenced or represented in the application.</p>
+            </div>
+
         </div>
     </div>
+
+    <footer>
+        <p>&copy; 2026 GoalSats. All rights reserved.</p>
+    </footer>
+
 </body>
 </html>
